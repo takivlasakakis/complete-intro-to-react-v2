@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
-const { shape, string } = React.PropTypes
+const { string } = React.PropTypes
 
 const ShowCard = React.createClass({
   propTypes: {//what i expect to get from my parent
@@ -11,7 +11,7 @@ const ShowCard = React.createClass({
     imdbID: string.isRequired
   },
   render () {
-    const { poster, title, year, description } = this.props.show
+    const { poster, title, year, description } = this.props //  remove .show because in search we did ...show
     return (
       <Link to={`/details/${this.props.imdbID}`}>
         <div className='show-card'>

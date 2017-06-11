@@ -28,9 +28,10 @@ module.exports = {
   module: {
     rules: [
       {
-        enforce: "pre",
+        include: path.resolve(__dirname, 'js'),
+        enforce: 'pre',
         test: /\.js$/,
-        loader: "eslint-loader",
+        loader: 'eslint-loader',
         exclude: /node_modules/
       },
       {

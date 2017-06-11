@@ -1,22 +1,22 @@
-/* eslint-disable */
 import React from 'react'
-import ReactDOM from 'react-dom'
-import MyTitle from './MyTitle'
+import { render } from 'react-dom'
+import { BrowserRouter, Match } from 'react-router' // these are HOCs
+import Landing from './Landing'
+import Search from './Search'
+import '../public/normalize.css'
+import '../public/style.css'
 
-var div = React.DOM.div
-
-var MyTitleFactory = React.createFactory(MyTitle) // convenience method{title: '
-
-var MyFirstComponent = React.createClass({
-  render: function () {
+const App = React.createClass({
+  render () {
     return (
-      div(null,
-        MyTitleFactory({title: 'props are da best', color: 'peru'}),
-        MyTitleFactory({title: 'semicolons are the worst', color: 'mediumaquamarine'}),
-        MyTitleFactory({title: 'really i hate semicolons', color: 'rebeccapurple'}),
-        MyTitleFactory({title: 'lololololol', color: 'tomato'})
-      )
+      <BrowserRouter>
+        <div className='app'>
+          <Match exactly pattern='/' component={Landing} />
+          <Match pattern='/search' component={Search} />
+        </div>
+      </BrowserRouter>
     )
   }
 })
-ReactDOM.render(React.createElement(MyFirstComponent), document.getElementById('app'))
+
+render(<App />, document.getElementById('app'))

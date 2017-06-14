@@ -5,7 +5,7 @@ import preload from '../public/data.json'
 const Search = React.createClass({
   getInitialState () { // enhanced object literal syntax, just shorter | getInitialState: function () {} 
     return {
-      searchTerm: ''
+      searchTerm: 'house'
     }
   },
 

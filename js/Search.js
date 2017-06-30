@@ -25,7 +25,7 @@ const Search = React.createClass({
         </header>
         <div>
           {preload.shows
-            .filter((show) => return `${show.title} ${show.description}`.toUpperCase().indexOf(this.state.searchTerm.toUpperCase()) >= 0 // look at 4:41+2:30 for good explaination 
+            .filter((show) => `${show.title} ${show.description}`.toUpperCase().indexOf(this.state.searchTerm.toUpperCase()) >= 0 // look at 4:41+2:30 for good explaination 
             )
             .map((show) => {
             return (
